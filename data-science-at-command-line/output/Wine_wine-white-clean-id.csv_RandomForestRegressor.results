@@ -1,0 +1,155 @@
+Experiment Name: Wine
+SKLL Version: 1.5.3
+Training Set: train
+Training Set Size: 4898
+Test Set: cv
+Test Set Size: n/a
+Shuffle: False
+Feature Set: ["wine-white-clean-id.csv"]
+Learner: RandomForestRegressor
+Task: cross_validate
+Number of Folds: 10
+Stratified Folds: True
+Feature Scaling: both
+Grid Search: False
+Scikit-learn Version: 0.20.1
+Start Timestamp: 28 Apr 2019 10:08:18.887769
+End Timestamp: 28 Apr 2019 10:10:21.107488
+Total Time: 0:02:02.219719
+
+
+Fold: 1
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  3.0000 (actual),  4.6060 (predicted)
+ Max =  8.0000 (actual),  7.2100 (predicted)
+ Avg =  5.8020 (actual),  5.7213 (predicted)
+ Std =  0.8873 (actual),  0.4938 (predicted)
+Pearson =  0.543746
+Objective Function Score (Test) = 0.2872110454345883
+
+Fold: 2
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  3.0000 (actual),  4.1960 (predicted)
+ Max =  9.0000 (actual),  7.3440 (predicted)
+ Avg =  5.9327 (actual),  5.7245 (predicted)
+ Std =  0.9739 (actual),  0.5094 (predicted)
+Pearson =  0.575220
+Objective Function Score (Test) = 0.2824795017146672
+
+Fold: 3
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  3.0000 (actual),  4.4440 (predicted)
+ Max =  8.0000 (actual),  7.2140 (predicted)
+ Avg =  5.9143 (actual),  5.8019 (predicted)
+ Std =  0.9566 (actual),  0.5121 (predicted)
+Pearson =  0.553674
+Objective Function Score (Test) = 0.29242678858162363
+
+Fold: 4
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  3.0000 (actual),  4.3200 (predicted)
+ Max =  9.0000 (actual),  7.2560 (predicted)
+ Avg =  5.7878 (actual),  5.7538 (predicted)
+ Std =  0.8665 (actual),  0.5178 (predicted)
+Pearson =  0.596586
+Objective Function Score (Test) = 0.3543813662887444
+
+Fold: 5
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  3.0000 (actual),  4.3700 (predicted)
+ Max =  8.0000 (actual),  7.4160 (predicted)
+ Avg =  5.6224 (actual),  5.7436 (predicted)
+ Std =  0.8585 (actual),  0.4862 (predicted)
+Pearson =  0.586750
+Objective Function Score (Test) = 0.3239530099172152
+
+Fold: 6
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  4.0000 (actual),  4.4560 (predicted)
+ Max =  8.0000 (actual),  7.2960 (predicted)
+ Avg =  5.9122 (actual),  5.8787 (predicted)
+ Std =  0.8958 (actual),  0.5458 (predicted)
+Pearson =  0.649923
+Objective Function Score (Test) = 0.41933875203055826
+
+Fold: 7
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  3.0000 (actual),  4.6680 (predicted)
+ Max =  8.0000 (actual),  7.7220 (predicted)
+ Avg =  6.0673 (actual),  6.0931 (predicted)
+ Std =  0.8815 (actual),  0.5232 (predicted)
+Pearson =  0.524313
+Objective Function Score (Test) = 0.2692567950648782
+
+Fold: 8
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  3.0000 (actual),  4.6360 (predicted)
+ Max =  8.0000 (actual),  7.3360 (predicted)
+ Avg =  6.0041 (actual),  6.0159 (predicted)
+ Std =  0.8852 (actual),  0.5589 (predicted)
+Pearson =  0.633853
+Objective Function Score (Test) = 0.40158521609728093
+
+Fold: 9
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  4.0000 (actual),  4.3920 (predicted)
+ Max =  8.0000 (actual),  7.1320 (predicted)
+ Avg =  5.8405 (actual),  5.9345 (predicted)
+ Std =  0.8209 (actual),  0.5273 (predicted)
+Pearson =  0.673241
+Objective Function Score (Test) = 0.4391795503927919
+
+Fold: 10
+Model Parameters: {"bootstrap": true, "criterion": "mse", "max_depth": null, "max_features": "auto", "max_leaf_nodes": null, "min_impurity_decrease": 0.0, "min_impurity_split": null, "min_samples_leaf": 1, "min_samples_split": 2, "min_weight_fraction_leaf": 0.0, "n_estimators": 500, "n_jobs": null, "oob_score": false, "random_state": 123456789, "verbose": 0, "warm_start": false}
+Grid Objective Score (Train) = 0.0
+
+Accuracy = 
+Descriptive statistics:
+ Min =  3.0000 (actual),  4.3760 (predicted)
+ Max =  8.0000 (actual),  7.5740 (predicted)
+ Avg =  5.8957 (actual),  6.0371 (predicted)
+ Std =  0.7259 (actual),  0.5742 (predicted)
+Pearson =  0.564181
+Objective Function Score (Test) = 0.22893075472596558
+
+Fold: average
+Model Parameters: 
+Grid Objective Score (Train) = 
+Objective Function Score (Test) = 0.3298742780248314
+

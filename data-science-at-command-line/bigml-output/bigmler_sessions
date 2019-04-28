@@ -1,0 +1,4 @@
+bigmler main --train wine-train.csv --test wine-test.csv --prediction-info full --prediction-header --output-dir bigml-output --tag wine --remote
+
+bigmler main --train wine-train.csv --test wine-test.csv --prediction-info full --prediction-header --output-dir bigml-output --tag wine --remote
+

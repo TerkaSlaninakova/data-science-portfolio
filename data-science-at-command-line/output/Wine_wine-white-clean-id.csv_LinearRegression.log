@@ -1,0 +1,3 @@
+2019-04-28 10:08:04,215 - INFO - Task: cross_validate
+2019-04-28 10:08:04,215 - INFO - Cross-validating (10 folds) on train, feature set ['wine-white-clean-id.csv'] ...
+2019-04-28 10:08:04,715 - INFO - Cross-validating
