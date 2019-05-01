@@ -11,32 +11,32 @@ def shuffle_data(dataset):
     """
     return dataset.reindex(np.random.permutation(dataset.index))
 
-def how_many_values_above_threshold(dataset, threshold, features = []):
+def how_many_values_above_threshold(dataset, feature_name, threshold):
     """Checks out how many data points are there above a given threshold.
         Useful in outlier detection.
     Args:
     dataset: A `pd.DataFrame`, the dataset
+    feature_name: A `string`, name of the feature to check
     threshold: A `number/int` threshold value above which the data points should be searched
-    features: A `list` of features to check in the dataset
     Returns:
     A `dict` of feature: number of data points above threshold
     """
-    feature_value_dict = {}
-    for feature in features:
-        feature_value_dict[feature] = dataset[dataset[feature] > threshold][feature].count()
-    return feature_value_dict
+    return dataset[dataset[feature_name] > threshold][feature_name].count()
 
-def how_many_values_below_threshold(dataset, threshold, features = []):
+def how_many_values_below_threshold(dataset, feature_name, threshold):
     """Checks out how many data points are there below a given threshold.
         Useful in outlier detection.
     Args:
     dataset: A `pd.DataFrame`, the dataset
+    feature_name: A `string`, name of the feature to check
     threshold: Numerical threshold value below which the data points should be searched
-    features: A `list` of features to check in the dataset
     Returns:
-    A `dict` of feature: number of data points below threshold
+    A `number` of times a given value was present within the feature
     """
-    feature_value_dict = {}
-    for feature in features:
-        feature_value_dict[feature] = dataset[dataset[feature] < threshold][feature].count()
-    return feature_value_dict
+    return dataset[dataset[feature_name] < threshold][feature_name].count()
+
+def clip_values_above_threshold(feature, threshold):
+    return feature.apply(lambda x: min(x, threshold))
+
+def clip_values_below_threshold(feature, threshold):
+    return feature.apply(lambda x: max(x, threshold))
