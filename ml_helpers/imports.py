@@ -6,3 +6,4 @@ from itertools import combinations
 import re
 import math
 import IPython
+from sklearn import metrics
