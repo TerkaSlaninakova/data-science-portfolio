@@ -52,3 +52,7 @@ def split_dataset(a, n):
 	y_train, y_valid = split_dataset(y, train_size)
 	"""
 	return a[:n].copy(), a[n:].copy()
+
+def get_random_df_sample(df, n):
+    idxs = sorted(np.random.permutation(len(df))[:n])
+    return df.iloc[idxs].copy()

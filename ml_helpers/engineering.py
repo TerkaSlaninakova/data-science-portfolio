@@ -1,5 +1,5 @@
 from .imports import *
-from pandas.api.types import is_string_dtype, is_numeric_dtype
+from pandas.api.types import is_string_dtype, is_numeric_dtype, is_datetime64_any_dtype
 
 # Taken from fast.ai - https://github.com/fastai/fastai/blob/72286b8b22284a53b07d777783ff5d392a3d45b0/old/fastai/structured.py
 def add_datepart(df, fldname, drop=True, time=False, errors="raise"):	
@@ -70,12 +70,12 @@ def to_categorical(df):
     for n,c in df.items():
         if is_string_dtype(c): df[n] = c.astype('category').cat.as_ordered()
 
-def numericalize_all(df):
-	for n,c in df.items(): numericalize(df, c, n, None)
+def numericalize_all(df, max_n_cat=None):
+	for n,c in df.items(): numericalize(df, c, n, max_n_cat)
 
 # Taken from fast.ai - https://github.com/fastai/fastai/blob/72286b8b22284a53b07d777783ff5d392a3d45b0/old/fastai/structured.py
 def numericalize(df, col, name, max_n_cat):
-    """ Changes the column col from a categorical type to it's integer codes.
+    """ Changes the column col from a categorical type to its integer codes.
     Parameters:
     -----------
     df: A pandas dataframe. df[name] will be filled with the integer codes from
@@ -108,7 +108,9 @@ def numericalize(df, col, name, max_n_cat):
     1     2    b    2
     2     3    a    1
     """
-    if not is_numeric_dtype(col) and ( max_n_cat is None or len(col.cat.categories)>max_n_cat):
+    if max_n_cat:
+        to_categorical(df)
+    if not is_numeric_dtype(col) and not is_datetime64_any_dtype(col) and ( max_n_cat is None or len(col.cat.categories)>max_n_cat):
         df[name] = pd.Categorical(col).codes+1
 
 def fill_all_missing(df):
@@ -165,7 +167,7 @@ def fix_missing(df, col, name, na_dict):
     >>> df
        col1 col2 col1_na
     0     1    5   False
-    1   500    2    True
+    1   500    2    True 
     2     3    2   False
     """
     if is_numeric_dtype(col):
@@ -175,3 +177,24 @@ def fix_missing(df, col, name, na_dict):
             df[name] = col.fillna(filler)
             na_dict[name] = filler
     return na_dict
+
+# Taken from fast.ai - proc_df https://github.com/fastai/fastai/blob/72286b8b22284a53b07d777783ff5d392a3d45b0/old/fastai/structured.py
+def basic_preprocess_df(df, y_fld=None, max_n_cat=None, datepart=None):
+    df = df.copy()
+    if not is_numeric_dtype(df[y_fld]): df[y_fld] = pd.Categorical(df[y_fld]).codes
+    y = df[y_fld].values
+    na_dict = {}
+    df.drop([y_fld], axis=1, inplace=True)
+    for n,c in df.items(): na_dict = fix_missing(df, c, n, na_dict)
+    for n,c in df.items(): numericalize(df, c, n, max_n_cat)
+    df = pd.get_dummies(df, dummy_na=True)
+    if datepart: add_datepart(df, datepart)
+    res = [df, y]
+    return res
+
+def one_hot_encode(df):
+    df = pd.get_dummies(df, dummy_na=True)
+    return df
+
+def find_nans(df):
+    return (df.isnull().sum().sort_index()/len(df)).sort_values(ascending=False)

@@ -7,3 +7,5 @@ import re
 import math
 import IPython
 from sklearn import metrics
+import math
+import scipy
