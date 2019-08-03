@@ -181,10 +181,11 @@ def fix_missing(df, col, name, na_dict):
 # Taken from fast.ai - proc_df https://github.com/fastai/fastai/blob/72286b8b22284a53b07d777783ff5d392a3d45b0/old/fastai/structured.py
 def basic_preprocess_df(df, y_fld=None, max_n_cat=None, datepart=None):
     df = df.copy()
-    if not is_numeric_dtype(df[y_fld]): df[y_fld] = pd.Categorical(df[y_fld]).codes
-    y = df[y_fld].values
+    if y_fld and not is_numeric_dtype(df[y_fld]): df[y_fld] = pd.Categorical(df[y_fld]).codes
+    y = None
+    if y_fld: y = df[y_fld].values
     na_dict = {}
-    df.drop([y_fld], axis=1, inplace=True)
+    if y_fld: df.drop([y_fld], axis=1, inplace=True)
     for n,c in df.items(): na_dict = fix_missing(df, c, n, na_dict)
     for n,c in df.items(): numericalize(df, c, n, max_n_cat)
     df = pd.get_dummies(df, dummy_na=True)
